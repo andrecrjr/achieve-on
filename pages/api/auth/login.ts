@@ -1,12 +1,10 @@
-import passport from '../../../lib/passport';
-import router from '../../../lib/router';
+import passport from "../../../lib/passport";
+import router from "../../../lib/router";
 
 interface AuthLoginResponse extends Response {
 	redirect: (path: string) => any;
 }
 
-const path = "/api/auth/login";
-
 export default router
-	.use(path, passport.authenticate("steam", { failureRedirect: "/"}))
-	.get(path, (_, res: AuthLoginResponse) => res.redirect("/"));
+	.use("/api/login", passport.authenticate("steam", {failureRedirect: "/"}))
+	.get("/api/login", (_, res: AuthLoginResponse) => res.redirect("/"));

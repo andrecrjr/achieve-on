@@ -8,5 +8,7 @@ interface AuthReturnResponse extends Response {
 const path = "/api/auth/return";
 
 export default router
-	.use(path, passport.authenticate("steam", { failureRedirect: "/" }))
-	.get(path, (_, res: AuthReturnResponse) => { res.redirect("/") });
+	.use(path, passport.authenticate("steam", {failureRedirect: "/"}))
+	.get(path, (_, res: AuthReturnResponse) => {
+		res.redirect("/");
+	});
