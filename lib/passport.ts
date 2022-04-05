@@ -13,7 +13,7 @@ passport.deserializeUser(function (obj, done) {
 passport.use(
 	new SteamStrategy(
 		{
-			returnURL: `${process.env.DOMAIN}/api/auth/return`,
+			returnURL: `${process.env.DOMAIN}/api/return`,
 			realm: `${process.env.DOMAIN}`,
 			apiKey: `${process.env.STEAM_API_KEY}`,
 		},
