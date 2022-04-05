@@ -12,13 +12,13 @@ export default function Index({user}) {
 					You can call other APIs to get more information within
 					`getServerSideProps` or within `lib/passport.ts`.
 					<br />
-					<Link href='/api/logout'>Logout</Link>
+					<Link href='/api/auth/logout'>Logout</Link>
 				</div>
 			) : (
 				<div>
 					Welcome!
 					<br />
-					<Link href='/api/login'>Login</Link>
+					<Link href='/api/auth/login'>Login</Link>
 				</div>
 			)}
 		</div>
